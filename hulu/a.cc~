@@ -1,0 +1,52 @@
+
+// 正整数n划分为k个正整数的和的划分数
+// // 使用递归
+//
+// #include <iostream>
+// using namespace std;
+//
+// const int MAXK=10;
+// int n, k, total, a[MAXK];
+//
+// void print() {
+//     int i=0;
+//         while(true) {
+//                 cout<<a[i];
+//                         if(a[++i] != 0)
+//                                     cout<<'+';
+//                                             else
+//                                                         break;
+//                                                             }
+//                                                                 cout<<endl;
+//                                                                 }
+//
+//                                                                 void divide(int n, int k, int min, int index) {
+//                                                                     while(min<=n/k) {
+//                                                                             if(k>1) {
+//                                                                                         a[index]=min;
+//                                                                                                     divide(n-min,k-1,min,index+1);
+//                                                                                                             }
+//                                                                                                                     else {
+//                                                                                                                                 a[index]=n;
+//                                                                                                                                             total++;
+//                                                                                                                                                         print();
+//                                                                                                                                                                     return;
+//                                                                                                                                                                             }
+//                                                                                                                                                                                     min++;
+//                                                                                                                                                                                         }
+//                                                                                                                                                                                         } 
+//
+//                                                                                                                                                                                         int main() {
+//                                                                                                                                                                                             while(true) {
+//                                                                                                                                                                                                     cout<<"请输入n、k"<<endl;
+//                                                                                                                                                                                                             do {
+//                                                                                                                                                                                                                         cin>>n>>k;
+//                                                                                                                                                                                                                                 } while(n<0 || k<0);
+//                                                                                                                                                                                                                                         if(n==0 || k==0)
+//                                                                                                                                                                                                                                                     break;
+//                                                                                                                                                                                                                                                             memset(a,0,sizeof(a));
+//                                                                                                                                                                                                                                                                     total=0;    
+//                                                                                                                                                                                                                                                                             divide(n,k,1,0);
+//                                                                                                                                                                                                                                                                                     cout<<"total="<<total<<endl<<endl;
+//                                                                                                                                                                                                                                                                                         }
+//                                                                                                                                                                                                                                                                                         }
